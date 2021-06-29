@@ -1,8 +1,24 @@
+require('dotenv').config()
+
+var HDWalletProvider = require('truffle-hdwallet-provider')
+
+const CUSTPOM_PRIM_KEY = process.env.CUSTPOM_PRIM_KEY
+const CUSTOM_RPC = process.env.CUSTOM_RPC
+
 module.exports = {
   networks: {
     development: {
       host: 'localhost',
       port: 8545,
+      network_id: '*',
+      gas: 6700000
+    },
+    custom: {
+      provider: function () {
+        return new HDWalletProvider(CUSTPOM_PRIM_KEY, CUSTOM_RPC)
+      },
+      from: '',
+      gas: 4000000,
       network_id: '*',
       gas: 6700000
     },

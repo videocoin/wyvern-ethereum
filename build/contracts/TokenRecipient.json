@@ -77,14 +77,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506102c7806100206000396000f3006080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638f4ffcb1811461008e575b60408051348152905173ffffffffffffffffffffffffffffffffffffffff3316917fa419615bc8fda4c87663805ee2a3597a6d71c1d476911d9892f340d965bc7bf1919081900360200190a2005b34801561009a57600080fd5b50604080516020601f60643560048181013592830184900484028501840190955281845261010b9473ffffffffffffffffffffffffffffffffffffffff81358116956024803596604435909316953695608494920191819084018382808284375094975061010d9650505050505050565b005b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152308116602483015260448201869052915184928316916323b872dd9160648083019260209291908290030181600087803b15801561018e57600080fd5b505af11580156101a2573d6000803e3d6000fd5b505050506040513d60208110156101b857600080fd5b505115156101c557600080fd5b8273ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fd65b48fd35864b3528d38e44760be5553248f89bf3ff6b06cca57817cc2650bf86856040518083815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610259578181015183820152602001610241565b50505050905090810190601f1680156102865780820380516001836020036101000a031916815260200191505b50935050505060405180910390a350505050505600a165627a7a7230582023e5341915a3f9a7c537657f931c8e80fd79a7139c82236ddc63ad214f4ed1260029",
-  "deployedBytecode": "0x6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638f4ffcb1811461008e575b60408051348152905173ffffffffffffffffffffffffffffffffffffffff3316917fa419615bc8fda4c87663805ee2a3597a6d71c1d476911d9892f340d965bc7bf1919081900360200190a2005b34801561009a57600080fd5b50604080516020601f60643560048181013592830184900484028501840190955281845261010b9473ffffffffffffffffffffffffffffffffffffffff81358116956024803596604435909316953695608494920191819084018382808284375094975061010d9650505050505050565b005b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152308116602483015260448201869052915184928316916323b872dd9160648083019260209291908290030181600087803b15801561018e57600080fd5b505af11580156101a2573d6000803e3d6000fd5b505050506040513d60208110156101b857600080fd5b505115156101c557600080fd5b8273ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fd65b48fd35864b3528d38e44760be5553248f89bf3ff6b06cca57817cc2650bf86856040518083815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610259578181015183820152602001610241565b50505050905090810190601f1680156102865780820380516001836020036101000a031916815260200191505b50935050505060405180910390a350505050505600a165627a7a7230582023e5341915a3f9a7c537657f931c8e80fd79a7139c82236ddc63ad214f4ed1260029",
+  "bytecode": "0x608060405234801561001057600080fd5b506102c7806100206000396000f3006080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638f4ffcb1811461008e575b60408051348152905173ffffffffffffffffffffffffffffffffffffffff3316917fa419615bc8fda4c87663805ee2a3597a6d71c1d476911d9892f340d965bc7bf1919081900360200190a2005b34801561009a57600080fd5b50604080516020601f60643560048181013592830184900484028501840190955281845261010b9473ffffffffffffffffffffffffffffffffffffffff81358116956024803596604435909316953695608494920191819084018382808284375094975061010d9650505050505050565b005b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152308116602483015260448201869052915184928316916323b872dd9160648083019260209291908290030181600087803b15801561018e57600080fd5b505af11580156101a2573d6000803e3d6000fd5b505050506040513d60208110156101b857600080fd5b505115156101c557600080fd5b8273ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fd65b48fd35864b3528d38e44760be5553248f89bf3ff6b06cca57817cc2650bf86856040518083815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610259578181015183820152602001610241565b50505050905090810190601f1680156102865780820380516001836020036101000a031916815260200191505b50935050505060405180910390a350505050505600a165627a7a7230582099ba3f71d89120c225670e337a7e578d6352c354f5c32b1bd296793c0f35d7de0029",
+  "deployedBytecode": "0x6080604052600436106100405763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416638f4ffcb1811461008e575b60408051348152905173ffffffffffffffffffffffffffffffffffffffff3316917fa419615bc8fda4c87663805ee2a3597a6d71c1d476911d9892f340d965bc7bf1919081900360200190a2005b34801561009a57600080fd5b50604080516020601f60643560048181013592830184900484028501840190955281845261010b9473ffffffffffffffffffffffffffffffffffffffff81358116956024803596604435909316953695608494920191819084018382808284375094975061010d9650505050505050565b005b604080517f23b872dd00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff8681166004830152308116602483015260448201869052915184928316916323b872dd9160648083019260209291908290030181600087803b15801561018e57600080fd5b505af11580156101a2573d6000803e3d6000fd5b505050506040513d60208110156101b857600080fd5b505115156101c557600080fd5b8273ffffffffffffffffffffffffffffffffffffffff168573ffffffffffffffffffffffffffffffffffffffff167fd65b48fd35864b3528d38e44760be5553248f89bf3ff6b06cca57817cc2650bf86856040518083815260200180602001828103825283818151815260200191508051906020019080838360005b83811015610259578181015183820152602001610241565b50505050905090810190601f1680156102865780820380516001836020036101000a031916815260200191505b50935050505060405180910390a350505050505600a165627a7a7230582099ba3f71d89120c225670e337a7e578d6352c354f5c32b1bd296793c0f35d7de0029",
   "sourceMap": "287:858:14:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;287:858:14;;;;;;;",
   "deployedSourceMap": "287:858:14:-;;;;;;;;;;;;;;;;;;;;1100:36;;;1126:9;1100:36;;;;;1114:10;1100:36;;;;;;;;;;;;287:858;741:244;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;741:244:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;741:244:14;;-1:-1:-1;741:244:14;;-1:-1:-1;;;;;;;741:244:14;;;;884:33;;;;;;:14;:33;;;;;;;905:4;884:33;;;;;;;;;;;;;;860:5;;884:14;;;;;:33;;;;;;;;;;;;;;844:7;884:14;:33;;;5:2:-1;;;;30:1;27;20:12;5:2;884:33:14;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;884:33:14;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;884:33:14;876:42;;;;;;;;961:5;933:45;;948:4;933:45;;;954:5;968:9;933:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;933:45:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;741:244;;;;;:::o",
   "source": "/*\n\n  Token recipient. Modified very slightly from the example on http://ethereum.org/dao (just to index log parameters).\n\n*/\n\npragma solidity 0.4.23;\n\nimport \"openzeppelin-solidity/contracts/token/ERC20/ERC20.sol\";\n\n/**\n * @title TokenRecipient\n * @author Project Wyvern Developers\n */\ncontract TokenRecipient {\n    event ReceivedEther(address indexed sender, uint amount);\n    event ReceivedTokens(address indexed from, uint256 value, address indexed token, bytes extraData);\n\n    /**\n     * @dev Receive tokens and generate a log event\n     * @param from Address from which to transfer tokens\n     * @param value Amount of tokens to transfer\n     * @param token Address of token\n     * @param extraData Additional data to log\n     */\n    function receiveApproval(address from, uint256 value, address token, bytes extraData) public {\n        ERC20 t = ERC20(token);\n        require(t.transferFrom(from, this, value));\n        emit ReceivedTokens(from, value, token, extraData);\n    }\n\n    /**\n     * @dev Receive Ether and generate a log event\n     */\n    function () payable public {\n        emit ReceivedEther(msg.sender, msg.value);\n    }\n}\n",
-  "sourcePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/TokenRecipient.sol",
+  "sourcePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/TokenRecipient.sol",
   "ast": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/TokenRecipient.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/TokenRecipient.sol",
     "exportedSymbols": {
       "TokenRecipient": [
         893
@@ -109,7 +109,7 @@
         "id": 831,
         "nodeType": "ImportDirective",
         "scope": 894,
-        "sourceUnit": 6708,
+        "sourceUnit": 6706,
         "src": "152:63:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -340,7 +340,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20_$6707",
+                        "typeIdentifier": "t_contract$_ERC20_$6705",
                         "typeString": "contract ERC20"
                       },
                       "typeName": {
@@ -348,10 +348,10 @@
                         "id": 858,
                         "name": "ERC20",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 6707,
+                        "referencedDeclaration": 6705,
                         "src": "844:5:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$6707",
+                          "typeIdentifier": "t_contract$_ERC20_$6705",
                           "typeString": "contract ERC20"
                         }
                       },
@@ -388,10 +388,10 @@
                       "name": "ERC20",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6707,
+                      "referencedDeclaration": 6705,
                       "src": "854:5:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_contract$_ERC20_$6707_$",
+                        "typeIdentifier": "t_type$_t_contract$_ERC20_$6705_$",
                         "typeString": "type(contract ERC20)"
                       }
                     },
@@ -405,7 +405,7 @@
                     "nodeType": "FunctionCall",
                     "src": "854:12:14",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20_$6707",
+                      "typeIdentifier": "t_contract$_ERC20_$6705",
                       "typeString": "contract ERC20"
                     }
                   },
@@ -438,7 +438,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7022,
+                            "referencedDeclaration": 7020,
                             "src": "905:4:14",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_TokenRecipient_$893",
@@ -483,7 +483,7 @@
                             "referencedDeclaration": 859,
                             "src": "884:1:14",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ERC20_$6707",
+                              "typeIdentifier": "t_contract$_ERC20_$6705",
                               "typeString": "contract ERC20"
                             }
                           },
@@ -494,7 +494,7 @@
                           "lValueRequested": false,
                           "memberName": "transferFrom",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6689,
+                          "referencedDeclaration": 6687,
                           "src": "884:14:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -527,10 +527,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "876:7:14",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -812,7 +812,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7001,
+                          "referencedDeclaration": 6999,
                           "src": "1114:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -841,7 +841,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7001,
+                          "referencedDeclaration": 6999,
                           "src": "1126:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -940,7 +940,7 @@
     "src": "127:1019:14"
   },
   "legacyAST": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/TokenRecipient.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/TokenRecipient.sol",
     "exportedSymbols": {
       "TokenRecipient": [
         893
@@ -965,7 +965,7 @@
         "id": 831,
         "nodeType": "ImportDirective",
         "scope": 894,
-        "sourceUnit": 6708,
+        "sourceUnit": 6706,
         "src": "152:63:14",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1196,7 +1196,7 @@
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_ERC20_$6707",
+                        "typeIdentifier": "t_contract$_ERC20_$6705",
                         "typeString": "contract ERC20"
                       },
                       "typeName": {
@@ -1204,10 +1204,10 @@
                         "id": 858,
                         "name": "ERC20",
                         "nodeType": "UserDefinedTypeName",
-                        "referencedDeclaration": 6707,
+                        "referencedDeclaration": 6705,
                         "src": "844:5:14",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ERC20_$6707",
+                          "typeIdentifier": "t_contract$_ERC20_$6705",
                           "typeString": "contract ERC20"
                         }
                       },
@@ -1244,10 +1244,10 @@
                       "name": "ERC20",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6707,
+                      "referencedDeclaration": 6705,
                       "src": "854:5:14",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_type$_t_contract$_ERC20_$6707_$",
+                        "typeIdentifier": "t_type$_t_contract$_ERC20_$6705_$",
                         "typeString": "type(contract ERC20)"
                       }
                     },
@@ -1261,7 +1261,7 @@
                     "nodeType": "FunctionCall",
                     "src": "854:12:14",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_ERC20_$6707",
+                      "typeIdentifier": "t_contract$_ERC20_$6705",
                       "typeString": "contract ERC20"
                     }
                   },
@@ -1294,7 +1294,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 7022,
+                            "referencedDeclaration": 7020,
                             "src": "905:4:14",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_TokenRecipient_$893",
@@ -1339,7 +1339,7 @@
                             "referencedDeclaration": 859,
                             "src": "884:1:14",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_ERC20_$6707",
+                              "typeIdentifier": "t_contract$_ERC20_$6705",
                               "typeString": "contract ERC20"
                             }
                           },
@@ -1350,7 +1350,7 @@
                           "lValueRequested": false,
                           "memberName": "transferFrom",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 6689,
+                          "referencedDeclaration": 6687,
                           "src": "884:14:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -1383,10 +1383,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "876:7:14",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1668,7 +1668,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7001,
+                          "referencedDeclaration": 6999,
                           "src": "1114:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1697,7 +1697,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 7001,
+                          "referencedDeclaration": 6999,
                           "src": "1126:3:14",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1801,5 +1801,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-06-12T05:05:32.606Z"
+  "updatedAt": "2021-06-29T16:54:22.565Z"
 }

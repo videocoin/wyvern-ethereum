@@ -40,14 +40,14 @@
       "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b50610115806100206000396000f30060806040526004361060525763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631a352851811460575780638727937914606b5780639e0199d814607d575b600080fd5b348015606257600080fd5b5060696052565b005b348015607657600080fd5b50606960d5565b348015608857600080fd5b506040805160206004803580820135601f8101849004840285018401909552848452606994369492936024939284019190819084018382808284375094975060d99650505050505050565b565b60d3565b805160021060e657600080fd5b505600a165627a7a72305820d014f846da7380b6ea57f3cbd8b33bd708e5263fa3dba41a24cd7e19bde896b70029",
-  "deployedBytecode": "0x60806040526004361060525763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631a352851811460575780638727937914606b5780639e0199d814607d575b600080fd5b348015606257600080fd5b5060696052565b005b348015607657600080fd5b50606960d5565b348015608857600080fd5b506040805160206004803580820135601f8101849004840285018401909552848452606994369492936024939284019190819084018382808284375094975060d99650505050505050565b565b60d3565b805160021060e657600080fd5b505600a165627a7a72305820d014f846da7380b6ea57f3cbd8b33bd708e5263fa3dba41a24cd7e19bde896b70029",
+  "bytecode": "0x608060405234801561001057600080fd5b50610115806100206000396000f30060806040526004361060525763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631a352851811460575780638727937914606b5780639e0199d814607d575b600080fd5b348015606257600080fd5b5060696052565b005b348015607657600080fd5b50606960d5565b348015608857600080fd5b506040805160206004803580820135601f8101849004840285018401909552848452606994369492936024939284019190819084018382808284375094975060d99650505050505050565b565b60d3565b805160021060e657600080fd5b505600a165627a7a72305820f6e68be4cd7f38f9f89bf95461a555247ec628c952df91d3e9753ce24534804e0029",
+  "deployedBytecode": "0x60806040526004361060525763ffffffff7c01000000000000000000000000000000000000000000000000000000006000350416631a352851811460575780638727937914606b5780639e0199d814607d575b600080fd5b348015606257600080fd5b5060696052565b005b348015607657600080fd5b50606960d5565b348015608857600080fd5b506040805160206004803580820135601f8101849004840285018401909552848452606994369492936024939284019190819084018382808284375094975060d99650505050505050565b565b60d3565b805160021060e657600080fd5b505600a165627a7a72305820f6e68be4cd7f38f9f89bf95461a555247ec628c952df91d3e9753ce24534804e0029",
   "sourceMap": "129:422:2:-;;;206:29;8:9:-1;5:2;;;30:1;27;20:12;5:2;206:29:2;129:422;;;;;;",
   "deployedSourceMap": "129:422:2:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;334:85;;8:9:-1;5:2;;;30:1;27;20:12;5:2;334:85:2;;;;;;241:87;;8:9:-1;5:2;;;30:1;27;20:12;5:2;241:87:2;;;;425:123;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;425:123:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;425:123:2;;-1:-1:-1;425:123:2;;-1:-1:-1;;;;;;;425:123:2;398:14;334:85::o;241:87::-;308:13;;425:123;521:15;;539:1;-1:-1:-1;513:28:2;;;;;;425:123;:::o",
   "source": "/*\n\n  << Test Static Calls >>\n\n*/\n\npragma solidity 0.4.23;\n\n/**\n  * @title TestStatic\n  * @author Project Wyvern Developers\n  */\ncontract TestStatic {\n\n    /**\n      * @dev Initialize contract\n      */\n    constructor () public {\n    }\n\n    function alwaysSucceed()\n        public\n        pure\n    {\n        require(true);\n    }\n\n    function alwaysFail()\n        public\n        pure\n    {\n        require(false);\n    }\n\n    function requireMinimumLength(bytes calldata)\n        public\n        pure\n    {\n        require(calldata.length > 2);\n    }\n\n}\n",
-  "sourcePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/TestStatic.sol",
+  "sourcePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/TestStatic.sol",
   "ast": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/TestStatic.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/TestStatic.sol",
     "exportedSymbols": {
       "TestStatic": [
         147
@@ -153,10 +153,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "308:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -250,10 +250,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "398:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -395,10 +395,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "513:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -487,7 +487,7 @@
     "src": "35:517:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/TestStatic.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/TestStatic.sol",
     "exportedSymbols": {
       "TestStatic": [
         147
@@ -593,10 +593,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "308:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -690,10 +690,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "398:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -835,10 +835,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "513:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -930,14 +930,7 @@
     "name": "solc",
     "version": "0.4.23+commit.124ca40d.Emscripten.clang"
   },
-  "networks": {
-    "4": {
-      "events": {},
-      "links": {},
-      "address": "0xc33a203d61c688433e53fcb6f3af7c6aa12192a4",
-      "transactionHash": "0x2aa63bfbd44953827919f32a31f6c89217520cdb75660a472d6a7592d63fad7a"
-    }
-  },
+  "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-06-12T06:49:46.729Z"
+  "updatedAt": "2021-06-29T16:54:22.562Z"
 }

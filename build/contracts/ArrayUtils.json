@@ -1,14 +1,14 @@
 {
   "contractName": "ArrayUtils",
   "abi": [],
-  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820bb799db9b1d357a360302be6deec04e90db17b169a68e2236646b8457b5f7c100029",
-  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820bb799db9b1d357a360302be6deec04e90db17b169a68e2236646b8457b5f7c100029",
+  "bytecode": "0x604c602c600b82828239805160001a60731460008114601c57601e565bfe5b5030600052607381538281f30073000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820ebad60bc40ec95d2747b06517d7d14afa4ce4d898b1e4330e2d7c7f72db6eafa0029",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fd00a165627a7a72305820ebad60bc40ec95d2747b06517d7d14afa4ce4d898b1e4330e2d7c7f72db6eafa0029",
   "sourceMap": "299:6350:11:-;;132:2:-1;166:7;155:9;146:7;137:37;252:7;246:14;243:1;238:23;232:4;229:33;270:1;265:20;;;;222:63;;265:20;274:9;222:63;;298:9;295:1;288:20;328:4;319:7;311:22;352:7;343;336:24",
   "deployedSourceMap": "299:6350:11:-;;;;;;;;",
   "source": "/*\n\n  Various functions for manipulating arrays in Solidity.\n  This library is completely inlined and does not need to be deployed or linked.\n\n*/\n\npragma solidity 0.4.23;\n\nimport \"openzeppelin-solidity/contracts/math/SafeMath.sol\";\n\n/**\n * @title ArrayUtils\n * @author Project Wyvern Developers\n */\nlibrary ArrayUtils {\n\n    /**\n     * Replace bytes in an array with bytes in another array, guarded by a bitmask\n     * Efficiency of this function is a bit unpredictable because of the EVM's word-specific model (arrays under 32 bytes will be slower)\n     * \n     * @dev Mask must be the size of the byte array. A nonzero byte means the byte array can be changed.\n     * @param array The original array\n     * @param desired The target array\n     * @param mask The mask specifying which bits can be changed\n     * @return The updated byte array (the parameter will be modified inplace)\n     */\n    function guardedArrayReplace(bytes memory array, bytes memory desired, bytes memory mask)\n        internal\n        pure\n    {\n        require(array.length == desired.length);\n        require(array.length == mask.length);\n\n        uint words = array.length / 0x20;\n        uint index = words * 0x20;\n        assert(index / 0x20 == words);\n        uint i;\n\n        for (i = 0; i < words; i++) {\n            /* Conceptually: array[i] = (!mask[i] && array[i]) || (mask[i] && desired[i]), bitwise in word chunks. */\n            assembly {\n                let commonIndex := mul(0x20, add(1, i))\n                let maskValue := mload(add(mask, commonIndex))\n                mstore(add(array, commonIndex), or(and(not(maskValue), mload(add(array, commonIndex))), and(maskValue, mload(add(desired, commonIndex)))))\n            }\n        }\n\n        /* Deal with the last section of the byte array. */\n        if (words > 0) {\n            /* This overlaps with bytes already set but is still more efficient than iterating through each of the remaining bytes individually. */\n            i = words;\n            assembly {\n                let commonIndex := mul(0x20, add(1, i))\n                let maskValue := mload(add(mask, commonIndex))\n                mstore(add(array, commonIndex), or(and(not(maskValue), mload(add(array, commonIndex))), and(maskValue, mload(add(desired, commonIndex)))))\n            }\n        } else {\n            /* If the byte array is shorter than a word, we must unfortunately do the whole thing bytewise.\n               (bounds checks could still probably be optimized away in assembly, but this is a rare case) */\n            for (i = index; i < array.length; i++) {\n                array[i] = ((mask[i] ^ 0xff) & array[i]) | (mask[i] & desired[i]);\n            }\n        }\n    }\n\n    /**\n     * Test if two arrays are equal\n     * Source: https://github.com/GNSPS/solidity-bytes-utils/blob/master/contracts/BytesLib.sol\n     * \n     * @dev Arrays must be of equal length, otherwise will return false\n     * @param a First array\n     * @param b Second array\n     * @return Whether or not all bytes in the arrays are equal\n     */\n    function arrayEq(bytes memory a, bytes memory b)\n        internal\n        pure\n        returns (bool)\n    {\n        bool success = true;\n\n        assembly {\n            let length := mload(a)\n\n            // if lengths don't match the arrays are not equal\n            switch eq(length, mload(b))\n            case 1 {\n                // cb is a circuit breaker in the for loop since there's\n                //  no said feature for inline assembly loops\n                // cb = 1 - don't breaker\n                // cb = 0 - break\n                let cb := 1\n\n                let mc := add(a, 0x20)\n                let end := add(mc, length)\n\n                for {\n                    let cc := add(b, 0x20)\n                // the next line is the loop condition:\n                // while(uint(mc < end) + cb == 2)\n                } eq(add(lt(mc, end), cb), 2) {\n                    mc := add(mc, 0x20)\n                    cc := add(cc, 0x20)\n                } {\n                    // if any of these checks fails then arrays are not equal\n                    if iszero(eq(mload(mc), mload(cc))) {\n                        // unsuccess:\n                        success := 0\n                        cb := 0\n                    }\n                }\n            }\n            default {\n                // unsuccess:\n                success := 0\n            }\n        }\n\n        return success;\n    }\n\n    /**\n     * Unsafe write byte array into a memory location\n     *\n     * @param index Memory location\n     * @param source Byte array to write\n     * @return End memory index\n     */\n    function unsafeWriteBytes(uint index, bytes source)\n        internal\n        pure\n        returns (uint)\n    {\n        if (source.length > 0) {\n            assembly {\n                let length := mload(source)\n                let end := add(source, add(0x20, length))\n                let arrIndex := add(source, 0x20)\n                let tempIndex := index\n                for { } eq(lt(arrIndex, end), 1) {\n                    arrIndex := add(arrIndex, 0x20)\n                    tempIndex := add(tempIndex, 0x20)\n                } {\n                    mstore(tempIndex, mload(arrIndex))\n                }\n                index := add(index, length)\n            }\n        }\n        return index;\n    }\n\n    /**\n     * Unsafe write address into a memory location\n     *\n     * @param index Memory location\n     * @param source Address to write\n     * @return End memory index\n     */\n    function unsafeWriteAddress(uint index, address source)\n        internal\n        pure\n        returns (uint)\n    {\n        uint conv = uint(source) << 0x60;\n        assembly {\n            mstore(index, conv)\n            index := add(index, 0x14)\n        }\n        return index;\n    }\n\n    /**\n     * Unsafe write uint into a memory location\n     *\n     * @param index Memory location\n     * @param source uint to write\n     * @return End memory index\n     */\n    function unsafeWriteUint(uint index, uint source)\n        internal\n        pure\n        returns (uint)\n    {\n        assembly {\n            mstore(index, source)\n            index := add(index, 0x20)\n        }\n        return index;\n    }\n\n    /**\n     * Unsafe write uint8 into a memory location\n     *\n     * @param index Memory location\n     * @param source uint8 to write\n     * @return End memory index\n     */\n    function unsafeWriteUint8(uint index, uint8 source)\n        internal\n        pure\n        returns (uint)\n    {\n        assembly {\n            mstore8(index, source)\n            index := add(index, 0x1)\n        }\n        return index;\n    }\n\n}\n",
-  "sourcePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ArrayUtils.sol",
+  "sourcePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ArrayUtils.sol",
   "ast": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ArrayUtils.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ArrayUtils.sol",
     "exportedSymbols": {
       "ArrayUtils": [
         758
@@ -33,7 +33,7 @@
         "id": 562,
         "nodeType": "ImportDirective",
         "scope": 759,
-        "sourceUnit": 6422,
+        "sourceUnit": 6420,
         "src": "172:59:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -150,10 +150,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "1031:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -271,10 +271,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "1080:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -585,7 +585,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6990,
+                      "referencedDeclaration": 6988,
                       "src": "1204:6:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -2825,7 +2825,7 @@
     "src": "147:6503:11"
   },
   "legacyAST": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ArrayUtils.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ArrayUtils.sol",
     "exportedSymbols": {
       "ArrayUtils": [
         758
@@ -2850,7 +2850,7 @@
         "id": 562,
         "nodeType": "ImportDirective",
         "scope": 759,
-        "sourceUnit": 6422,
+        "sourceUnit": 6420,
         "src": "172:59:11",
         "symbolAliases": [],
         "unitAlias": ""
@@ -2967,10 +2967,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "1031:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3088,10 +3088,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        7004,
-                        7005
+                        7002,
+                        7003
                       ],
-                      "referencedDeclaration": 7004,
+                      "referencedDeclaration": 7002,
                       "src": "1080:7:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -3402,7 +3402,7 @@
                       "name": "assert",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 6990,
+                      "referencedDeclaration": 6988,
                       "src": "1204:6:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_assert_pure$_t_bool_$returns$__$",
@@ -5647,5 +5647,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-06-12T05:05:32.603Z"
+  "updatedAt": "2021-06-29T16:54:22.564Z"
 }

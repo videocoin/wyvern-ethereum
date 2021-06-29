@@ -7,7 +7,7 @@ cd contracts
 find . -type f -name "*.sol" -exec sed -i 's/pragma solidity 0.4.23/pragma solidity ^0.4.23/g' {} +
 cd ..
 
-alias flatten="solidity_flattener --solc-paths openzeppelin-solidity=$(pwd)/node_modules/openzeppelin-solidity"
+alias flatten="./node_modules/.bin/solidity-flattener"
 
 flatten contracts/WyvernAtomicizer.sol --output temp/WyvernAtomicizer.sol
 flatten contracts/WyvernTokenTransferProxy.sol --output temp/WyvernTokenTransferProxy.sol

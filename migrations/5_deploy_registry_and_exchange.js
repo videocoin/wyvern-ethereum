@@ -8,7 +8,7 @@ const TestToken = artifacts.require('TestToken')
 const { setConfig } = require('./config.js')
 
 module.exports = (deployer, network) => {
-  if (network === 'development' || network === 'rinkeby' || network === 'coverage' || network === 'main') {
+  if (network === 'development' || network === 'rinkeby' || network === 'coverage' || network === 'main' || network === 'custom') {
     return deployer.deploy(WyvernProxyRegistry)
       .then(() => {
         setConfig('deployed.' + network + '.WyvernProxyRegistry', WyvernProxyRegistry.address)

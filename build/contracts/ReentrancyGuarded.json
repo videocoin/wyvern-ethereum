@@ -1,14 +1,14 @@
 {
   "contractName": "ReentrancyGuarded",
   "abi": [],
-  "bytecode": "0x60806040526000805460ff19169055348015601957600080fd5b5060358060276000396000f3006080604052600080fd00a165627a7a72305820ad63e7c07de20711298fdab08206c9a6d7e75149dc58d49aae0941bc2ab5014a0029",
-  "deployedBytecode": "0x6080604052600080fd00a165627a7a72305820ad63e7c07de20711298fdab08206c9a6d7e75149dc58d49aae0941bc2ab5014a0029",
+  "bytecode": "0x60806040526000805460ff19169055348015601957600080fd5b5060358060276000396000f3006080604052600080fd00a165627a7a723058206ab8bcb3be19ba0e871ecfce8684366cd309904627bf85e58d92153d1879bd390029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a723058206ab8bcb3be19ba0e871ecfce8684366cd309904627bf85e58d92153d1879bd390029",
   "sourceMap": "195:306:12:-;;;251:5;229:27;;-1:-1:-1;;229:27:12;;;195:306;5:2:-1;;;;30:1;27;20:12;5:2;195:306:12;;;;;;;",
   "deployedSourceMap": "195:306:12:-;;;;;",
   "source": "/*\n\n  Simple contract extension to provide a contract-global reentrancy guard on functions.\n\n*/\n\npragma solidity 0.4.23;\n\n/**\n * @title ReentrancyGuarded\n * @author Project Wyvern Developers\n */\ncontract ReentrancyGuarded {\n\n    bool reentrancyLock = false;\n\n    /* Prevent a contract function from being reentrant-called. */\n    modifier reentrancyGuard {\n        if (reentrancyLock) {\n            revert();\n        }\n        reentrancyLock = true;\n        _;\n        reentrancyLock = false;\n    }\n\n}\n",
-  "sourcePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
+  "sourcePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
   "ast": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
     "exportedSymbols": {
       "ReentrancyGuarded": [
         782
@@ -122,10 +122,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              7006,
-                              7007
+                              7004,
+                              7005
                             ],
-                            "referencedDeclaration": 7006,
+                            "referencedDeclaration": 7004,
                             "src": "399:6:12",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -283,7 +283,7 @@
     "src": "97:405:12"
   },
   "legacyAST": {
-    "absolutePath": "/home/cwgoes/working/crypto/wyvern/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
+    "absolutePath": "/Users/tarasshchybovyk/Development/fairytec/wyvern-ethereum/contracts/common/ReentrancyGuarded.sol",
     "exportedSymbols": {
       "ReentrancyGuarded": [
         782
@@ -397,10 +397,10 @@
                             "name": "revert",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              7006,
-                              7007
+                              7004,
+                              7005
                             ],
-                            "referencedDeclaration": 7006,
+                            "referencedDeclaration": 7004,
                             "src": "399:6:12",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_revert_pure$__$returns$__$",
@@ -563,5 +563,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-06-12T05:05:32.606Z"
+  "updatedAt": "2021-06-29T16:54:22.565Z"
 }
